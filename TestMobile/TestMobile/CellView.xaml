@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:TestMobile.Converters"
+             x:Class="TestMobile.CellView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Button BackgroundColor="{Binding Cell.State, Converter={StaticResource BoolToColorConverter}, Mode=OneWay}" Pressed="CellButton_Pressed"/>
+    </ContentView.Content>
+</ContentView>
